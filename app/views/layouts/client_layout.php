@@ -18,13 +18,16 @@
     <link rel="stylesheet" href="<?= pathClients('assets/css/custom.css?ver=' . rand()) ?>">
     <link href="<?= pathClients('assets/vendor/boxicons/css/boxicons.min.css') ?>" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 
     <title><?= $title ?? 'STV News' ?></title>
 </head>
 
 <body>
     <?php loadView('components/clients/header') ?>
-    <main class="container">
+    <?= App\Core\Session::flash('toast') ?? '' ?>
+    <main id="main" class="container">
         <?php isset($forward) ? loadView($view, $forward) : loadView($view) ?>
     </main>
     <?php loadView('components/clients/footer') ?>
@@ -53,7 +56,6 @@
 
     <!-- Scrollup, nice-select, sticky -->
     <script src="<?= pathClients('assets/js/jquery.scrollUp.min.js') ?>"></script>
-    <script src="<?= pathClients('assets/js/jquery.nice-select.min.js') ?>"></script>
     <script src="<?= pathClients('assets/js/jquery.sticky.js') ?>"></script>
 
 

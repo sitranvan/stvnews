@@ -19,6 +19,7 @@ $routes = [
         'dang-xuat' => 'clients/auth/LogoutController',
         'thay-doi-mat-khau' => 'clients/auth/ChangePasswordController',
         'submit-change-password' => 'clients/auth/ChangePasswordController/changePassword',
+        'quen-mat-khau' => 'clients/auth/ForgotPasswordController',
         'danh-muc' => 'clients/CategoryController',
         've-chung-toi' => 'clients/AboutController',
         'tin-moi-nhat' => 'clients/LatestNewsController',

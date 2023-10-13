@@ -13,6 +13,7 @@
     },
     "files": [
       "app/helpers/functions.php",
+      "app/helpers/display.php",
       "templates/template.php"
     ]
   },

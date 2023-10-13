@@ -15,8 +15,11 @@
 </head>
 
 <body>
+    <?= App\Core\Session::flash('toast') ?? '' ?>
 
-    <?php isset($forward) ? loadView($view, $forward) : loadView($view) ?>
+    <main id="main">
+        <?php isset($forward) ? loadView($view, $forward) : loadView($view) ?>
+    </main>
     <script src="<?= pathCommon('assets/vendor/bootstrap/js/bootstrap.bundle.min.js?ver=' . rand()) ?>"></script>
     <script src="<?= pathCommon('assets/js/custom.js?ver=' . rand()) ?>"></script>
 </body>

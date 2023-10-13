@@ -18,5 +18,4 @@ require_once 'configs/loadConfigs.php';
 
 $dotenv = Dotenv::createUnsafeImmutable(__DIR__);
 $dotenv->load();
-
 new App();

@@ -11,6 +11,7 @@ class ComposerStaticInit984abdaaa7fcf75802ce7f7b9c7923e0
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
         'a4a119a56e50fbb293281d9a48007e0e' => __DIR__ . '/..' . '/symfony/polyfill-php80/bootstrap.php',
         'c8b72ffb2ca4a023769f7930823d379d' => __DIR__ . '/../..' . '/app/helpers/functions.php',
+        'e2aae695a93b14e918692710b85526c5' => __DIR__ . '/../..' . '/app/helpers/display.php',
         '1619dc018b8a14d364e3e27758807230' => __DIR__ . '/../..' . '/templates/template.php',
     );
 

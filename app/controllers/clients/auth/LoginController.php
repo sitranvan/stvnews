@@ -130,8 +130,10 @@ class LoginController extends Controller
     public function redirectPage($insertStatusUser, $insertStatusAdmin)
     {
         if ($insertStatusUser) {
+            Session::flash('toast', toast('Đăng nhập thành công!', 'success'));
             Response::redirect('');
         } elseif ($insertStatusAdmin) {
+            Session::flash('toast', toast('Đăng nhập admin thành công!', 'success'));
             Response::redirect('admin');
         } else {
             Response::setMessage('Hệ thống đang gặp sự cố, vui lòng thử lại sau', 'danger');

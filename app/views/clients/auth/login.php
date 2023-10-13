@@ -35,10 +35,21 @@
                                 </div>
 
                                 <div class="col-12">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" name="remember" value="true" id="rememberMe">
-                                        <label class="form-check-label" for="rememberMe">Ghi nhớ đăng nhập</label>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" name="remember" value="true" id="rememberMe">
+                                                <label class="form-check-label" for="rememberMe">Ghi nhớ đăng nhập</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-6 text-end">
+                                            <a href="<?= route('quen-mat-khau') ?>" class="text-decoration-none">
+                                                <i class="fa-solid fa-key"></i>
+                                                Quên mật khẩu?
+                                            </a>
+                                        </div>
                                     </div>
+
                                 </div>
                                 <div class="col-12">
                                     <button class="btn btn-primary w-100 btn-submit" type="submit">Đăng nhập</button>

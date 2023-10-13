@@ -9,6 +9,7 @@ use App\Model\UserSession;
 class LogoutController extends Controller
 {
     private $userSession;
+    private $data = [];
 
     public function __construct()
     {
@@ -19,12 +20,16 @@ class LogoutController extends Controller
         $rememberToken = Cookie::get('remember_token');
         $loginToken =  Session::data('session_token') ?? $rememberToken;
         $condition = "token='$loginToken'";
-        $this->userSession->deleteUserSession($condition);
-
         if (isset($rememberToken)) {
             Cookie::set('remember_token', expires: time() - _COOKIE_EXPIRES_TIME);
         }
-        session_destroy();
+        $deleteStatus = $this->userSession->deleteUserSession($condition);
+        if ($deleteStatus) {
+            Session::data('msg', 'hello');
+            Session::delete('temp_token');
+            Session::delete('session_token');
+        }
+        Session::flash('toast', toast('Đăng xuất thành công!', 'success'));
         Response::redirect('');
     }
 }
