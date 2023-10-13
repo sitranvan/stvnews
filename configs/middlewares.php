@@ -17,7 +17,7 @@ $guestRoutes = [
 $authRoutes = [
     'className' => AuthMiddleware::class,
     'routes' => [
-        'lien-he'
+        'lien-he', 'thay-doi-mat-khau'
     ],
 ];
 

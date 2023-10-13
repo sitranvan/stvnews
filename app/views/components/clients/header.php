@@ -45,7 +45,7 @@
                                             </button>
                                             Thông tin cá nhân</a>
                                         <div class="dropdown-divider m-0"></div>
-                                        <a class="dropdown-item user-item" href="#">
+                                        <a class="dropdown-item user-item" href="<?= route('thay-doi-mat-khau') ?>">
                                             <button class="user-item-icon">
                                                 <i class='bx bx-cog'></i>
                                             </button>

@@ -66,6 +66,51 @@ class Validate
         }
     }
 
+    public function oldPassword($password = null)
+    {
+
+        if (empty(trim($password))) {
+            $this->errors['old_password'] = 'Mật khẩu bắt buộc phải nhập';
+        } else {
+            $login = new Login();
+            // Xử lí khi user đã đăng nhập
+            if (!empty($login->getUser())) {
+                $userLogin = $login->getUser();
+                if (!password_verify($password, $userLogin['password'])) {
+                    $this->errors['old_password'] = 'Mật khẩu cũ chưa chính xác';
+                }
+            }
+        }
+    }
+
+
+    public function newPassword($password = null)
+    {
+
+        if (empty(trim($password))) {
+            $this->errors['new_password'] = 'Mật khẩu bắt buộc phải nhập';
+        } else {
+            if (strlen(trim($password)) < 6) {
+                $this->errors['new_password'] = 'Mật khẩu tối thiểu 6 ký tự';
+            } else {
+                $pattern = '/^.*(?=.*[!@#$%^&*]).*$/';
+                if (!preg_match($pattern, trim($password))) {
+                    $this->errors['new_password'] = 'Mật khẩu chứa ít nhất 1 ký tự đặt biệt';
+                }
+            }
+        }
+    }
+    public function confirmNewPassword($confirmPassword = null, $password = null)
+    {
+        if (empty(trim($confirmPassword))) {
+            $this->errors['confirm_new_password'] = 'Xác nhận mật khẩu bắt buộc phải nhập';
+        } else {
+            if (!hash_equals($password, $confirmPassword)) {
+                $this->errors['confirm_new_password'] = 'Mật khẩu không khớp';
+            }
+        }
+    }
+
     public function confirmPassword($confirmPassword = null, $password = null)
     {
         if (empty(trim($confirmPassword))) {

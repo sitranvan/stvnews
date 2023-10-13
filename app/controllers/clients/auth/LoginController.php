@@ -28,8 +28,8 @@ class LoginController extends Controller
     }
     public function index()
     {
-        $this->data["title"] = "Đăng nhập";
-        $this->data["view"] = $this->view(_CLENTS, 'auth/login');
+        $this->data['title'] = "Đăng nhập";
+        $this->data['view'] = $this->view(_CLENTS, 'auth/login');
         $this->data['forward']['errors'] = Session::flash('errors');
         $this->data['forward']['old'] = Session::flash('old');
         $this->data['forward']['msg'] = Session::flash('msg');
