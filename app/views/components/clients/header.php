@@ -36,7 +36,7 @@
                                 <li class="nav-item dropdown user-dropdown">
                                     <span class="dropdown-toggle text-primary-emphasis fw-semibold user-name" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         <img src="<?= pathClients('assets/img/user/ninja.png') ?>" alt="user">
-                                        Trần Văn Sĩ
+                                        <?= $fullname ?? '' ?>
                                     </span>
                                     <div class="dropdown-menu user-dropdown-menu border-0" aria-labelledby="navbarDropdown">
                                         <a class="dropdown-item user-item" href="#">
@@ -67,8 +67,8 @@
                             </ul>
                         <?php else : ?>
                             <a href="<?= route('dang-nhap') ?>" class="login-text">
-                                Đăng nhập
-                                <i class='bx bx-log-in'></i>
+                                <i class="fa-solid fa-user-large mr-1"></i>
+                                Chưa đăng nhập
                             </a>
                         <?php endif ?>
 

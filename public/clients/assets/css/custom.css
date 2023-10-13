@@ -45,7 +45,15 @@
 }
 .login-text {
   color: #012970;
-  font-weight: 400;
+  font-size: 15px;
+  display: flex;
+  align-items: start;
+  font-weight: 500;
+  font-style: italic;
+}
+.login-text > i {
+  font-size: 15px;
+  margin-top: 2px;
 }
 .login-text:hover {
   color: #3d6bb9 !important;
@@ -90,4 +98,3 @@
 #navigation {
   white-space: nowrap;
 }
-
