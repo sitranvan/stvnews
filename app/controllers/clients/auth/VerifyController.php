@@ -49,9 +49,9 @@ class VerifyController extends Controller
         } else {
             $request = new Request();
             $userId = $request->get('id');
-            $resultTime = Helpers::checkTimeVerified($verifyData['expires']);
+            $verifyExpires = Helpers::checkTimeVerified($verifyData['expires']);
             $otp = $verifyData['code'];
-            if ($otp == (int)$request->get('otp') && $resultTime <= _VERIFIED_EXPIRES) {
+            if ($otp == (int)$request->get('otp') && $verifyExpires <= _VERIFIED_EXPIRES) {
                 $dataUpdate = [
                     'active' => 1,
                     'expires' => null,
@@ -66,7 +66,7 @@ class VerifyController extends Controller
             if ($otp != (int)$request->get('otp')) {
                 Response::setMessage('Mã OTP không hợp lệ', 'warning');
             } else {
-                if ($resultTime > _VERIFIED_EXPIRES) {
+                if ($verifyExpires > _VERIFIED_EXPIRES) {
                     Response::setMessage('Mã OTP của bạn đã hết hạn', 'warning');
                 }
             }

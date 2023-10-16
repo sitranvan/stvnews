@@ -71,8 +71,8 @@ class RegisterController extends Controller
                     $subject = 'Xác thực tài khoản';
                     $content = getContentVerified($otp);
 
-                    $resultMailer = $mailer->sendMail($request->get('email'), $subject, $content);
-                    if ($resultMailer) {
+                    $mailerStatus = $mailer->sendMail($request->get('email'), $subject, $content);
+                    if ($mailerStatus) {
                         Response::setMessage('Vui lòng kiểm tra email để xác thực!', 'success');
                         Response::redirect('xac-thuc?id=' . $userId);
                     } else {

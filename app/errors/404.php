@@ -9,18 +9,18 @@
     <link href="<?= pathCommon('assets/vendor/boxicons/css/boxicons.min.css') ?>" rel="stylesheet">
     <link href="<?= pathCommon('assets/vendor/remixicon/remixicon.css') ?>" rel="stylesheet">
     <link rel="stylesheet" href="<?= pathCommon('assets/css/custom.css?ver=' . rand()) ?>">
-    <title>404 Not Found</title>
+    <title>Không tìm thấy trang</title>
 </head>
 
 <body style="height: 100vh;">
     <section class="container d-flex align-items-center flex-column gap-5 justify-content-center h-75">
         <img width="150" src="<?= pathCommon('images/404-icon.png') ?>" alt="404-icon">
-        <h1 class="text-danger text-uppercase">Page Not Found</h1>
+        <h1 class="text-danger text-uppercase">Không tìm thấy trang</h1>
         <?php if (!empty($message)) : ?>
             <p>$message</p>
         <?php endif ?>
         <a href="<?= route() ?>" class="btn btn-danger px-4 py-2">
-            Back To Home Page</a>
+            Quay về trang chủ</a>
     </section>
 </body>
 <script src="<?= pathCommon('assets/vendor/bootstrap/js/bootstrap.bundle.min.js?ver=' . rand()) ?>"></script>

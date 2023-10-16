@@ -1,34 +1,34 @@
 <?php
 function isInvalid($errors = [], $fieldName = '')
 {
-    return isset($errors[$fieldName]) ? 'is-invalid' : false;
+  return isset($errors[$fieldName]) ? 'is-invalid' : false;
 }
 
 function getMessageError($errors = [], $fieldName = '')
 {
-    return $errors[$fieldName] ?? false;
+  return $errors[$fieldName] ?? false;
 }
 
 function old($old = [], $fieldName = '')
 {
-    return $old[$fieldName] ?? false;
+  return $old[$fieldName] ?? false;
 }
 
 function alert($msg = '', $type = '')
 {
 
-    if (!empty($msg) && !empty($type)) {
-        return ' 
+  if (!empty($msg) && !empty($type)) {
+    return ' 
     <div class="message-error alert alert-' . $type . ' alert-dismissible fade show" role="alert">
         ' . $msg . '
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>';
-    }
+  }
 }
 
 function getContentVerified($otp = null)
 {
-    $content = 'Mã OTP của bạn là: <b>' . $otp . '</b><br><br>
+  $content = 'Mã OTP của bạn là: <b>' . $otp . '</b><br><br>
         
     Vui lòng sử dụng OTP để hoàn tất quá trình đăng nhập của bạn. OTP có giá trị trong 5 phút.
     <br><br>  
@@ -37,12 +37,20 @@ function getContentVerified($otp = null)
     Vui lòng liên hệ với chúng tôi để được trợ giúp bằng cách trả lời email này..<br><br>
     
     Trân trọng!';
-    return $content;
+  return $content;
+}
+
+function getContentForgotPassword($linkReset = '')
+{
+  $content = 'Chúng tôi nhận được yêu cầu khôi phục mật khẩu từ bạn.<br><br> Vui lòng nhấn vào link sau để tiến hành khôi phục mật khẩu <br>';
+  $content .= $linkReset;
+  $content .= '<br><br>Trân trọng!';
+  return $content;
 }
 
 function toast($title, $icon)
 {
-    return "
+  return "
       <script>
         Swal.fire({
           toast: true,
